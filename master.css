@@ -29,8 +29,7 @@
   box-sizing: border-box;
   justify-content: center;
   text-align: left;
-  overflow: hidden;
-  max-width: 100vw;
+  max-width: 100%;
 }
 
 nav {
@@ -83,13 +82,17 @@ li {
 
 .body-hero {
   height: auto;
-  max-width: 600px;
+  max-width: 100vw;
   margin: 2vh 0 10vh 0;
+
 }
 
 .main-a {
   overflow: hidden;
   box-sizing: border-box;
+  height: 35vh;
+  width: auto;
+  z-index: -1;
 }
 
 .main-a::after {
@@ -101,7 +104,7 @@ li {
 	width: 100%;
 	height: 100%;
 	background-color: var(--lightGrayishBlue);
-	z-index: -1;
+	z-index: -2;
 }
 
 .main-b {
@@ -173,7 +176,7 @@ button:hover {
   color: var(--grayishBlue);
 }
 
-@media (min-width:600px) {
+@media (min-width:760px) {
   nav {
     padding: 4.5vh 7.5vh;
   }
@@ -185,6 +188,14 @@ button:hover {
   li {
     height: 80px;
     font-size: 1.5rem;
+  }
+
+  .main-a {
+    height: 45vh;
+  }
+
+  .main-b {
+    margin-top: 10vh;
   }
 
   h1 {
@@ -215,7 +226,111 @@ button:hover {
 }
 
 @media (min-width:800px) {
+  *,
   body {
-    background-color: red;
+    margin: 0;
   }
+
+  .container {
+    min-height: 100vh;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  nav {
+    padding: 2.5vh 7.5vw 2.5vh 10vw;
+
+  }
+
+  .nav {
+    display: inline;
+    position: inherit;
+    max-width: 35vw;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 0 0;
+  }
+
+  li {
+    display: inline;
+    background-color: inherit;
+    height: 25px;
+    padding: 0 0 0 0;
+    font-size: 1rem;
+  }
+
+  li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+
+  .main {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row-reverse;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+  }
+
+  .main-a {
+    width: 50vw;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .main-a img {
+    position: fixed;
+    width: auto;
+    height: 60vh;
+    right: -15%;
+  }
+
+
+  .main-b {
+    box-sizing: border-box;
+    width: 45vw;
+    height: 100%;
+    padding-top: 5vh;
+  }
+
+  h2, span {
+    font-size: 0.8rem;
+  }
+
+  span {
+    margin-right: 1vw;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 4vh;
+    margin-top: 3vh;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 7.5vh;
+  }
+
+  .schedule p {
+    font-size: 1rem;
+  }
+
+  .schedule button {
+    width: 50%;
+    height: 8vh;
+    font-size: 1.3rem;
+  }
+
 }
